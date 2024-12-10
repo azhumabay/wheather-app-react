@@ -1,0 +1,34 @@
+.wrapper {
+  width: 371px;
+  height: 50px;
+  border-bottom: 1px solid black;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 13px 17px 13px 0;
+}
+
+.input {
+  border: none;
+  outline: none;
+  background-color: inherit;
+  color: #fff;
+
+  font-size: 20px;
+
+  &::placeholder {
+    color: #fff;
+    font-size: 20px;
+  }
+}
+
+.magnifier {
+  width: 28px;
+  height: 28px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
