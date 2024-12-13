@@ -13,7 +13,7 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   overflow-x: hidden;
-  height: 100vh;
+  max-height: 100vh;
 
   font-family: "Roboto", sans-serif;
 }
