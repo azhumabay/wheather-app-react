@@ -1,13 +1,24 @@
 .container {
   width: 526px;
 
-  background: inherit;
+  background: rgba(0, 0, 0, 0.70);
   backdrop-filter: blur(19px);
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   overflow: hidden;
+  height: 100vh;
+  overflow-y: scroll;
 
   padding: 55px 35px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(transparent, #404040c0);
+  border-radius: 10px;
 }
 
 .title {
