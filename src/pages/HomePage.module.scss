@@ -1,0 +1,27 @@
+.container {
+  margin: 0 auto;
+  width: 1440px;
+
+  display: flex;
+  justify-content: space-between;
+
+  > *:first-child {
+    display: none;
+  }
+
+  @media screen and (max-width: 1440px) {
+    width: 100%;
+    padding: 0 40px;
+  }
+
+  @media screen and (max-width: 1200px) {
+    flex-direction: column;
+
+    > *:first-child {
+      display: flex;
+      position: absolute;
+      right: 40px;
+      top: 20px;
+    }
+  }
+}

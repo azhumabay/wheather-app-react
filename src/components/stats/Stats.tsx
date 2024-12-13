@@ -1,5 +1,5 @@
 import { FC } from "react";
-import stats from "./Stats.module.css";
+import stats from "./Stats.module.scss";
 import temp_max from "@icons/temp_max.svg";
 import temp_min from "@icons/temp_min.svg";
 import humadity from "@icons/humadity.svg";

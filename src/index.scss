@@ -7,13 +7,18 @@
 }
 
 body {
-  background-color: #e0f7fa;
-  background-image: url("./assets/images/background-winter.jpg");
+  background: rgba(0, 0, 0, 1);
+  background-image: url("@assets/images/winter.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   overflow-x: hidden;
-  max-height: 100vh;
 
   font-family: "Roboto", sans-serif;
+
+  @media screen and (max-width: 1200px) {
+    height: 50vw;
+    object-fit: contain;
+    object-position: bottom;
+  }
 }

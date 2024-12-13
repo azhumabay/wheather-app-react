@@ -10,6 +10,10 @@
   text-transform: uppercase;
   font-weight: 400;
   font-size: 18px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 14px;
+  }
 }
 
 .ul {
@@ -19,6 +23,10 @@
   flex-direction: column;
   gap: 30px;
   font-size: 18px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 14px;
+  }
 }
 
 .ul > li {

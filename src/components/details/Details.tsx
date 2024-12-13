@@ -1,5 +1,5 @@
 import { FC } from "react";
-import styles from "./Details.module.css";
+import styles from "./Details.module.scss";
 import Search from "@components/search/Search";
 import Stats from "@components/stats/Stats";
 import Forecast from "@components/forecast/Forecast";

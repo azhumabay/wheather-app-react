@@ -2,6 +2,10 @@
   font-size: 18px;
   color: #fff;
   font-weight: 400;
+
+  @media screen and (max-width: 768px) {
+    font-size: 14px;
+  }
 }
 
 .title {
@@ -29,6 +33,12 @@
   & > img {
     width: 36px;
     height: 36px;
+  }
+
+  @media screen and (max-width: 768px) {
+    & > p {
+      font-size: 18px;
+    }
   }
 }
 

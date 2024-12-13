@@ -1,14 +1,27 @@
 .container {
   width: 526px;
 
-  background: rgba(0, 0, 0, 0.70);
+  background: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(19px);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   height: 100vh;
   overflow-y: scroll;
 
   padding: 55px 35px;
+
+  @media screen and (max-width: 1200px) {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: calc(60vw);
+    overflow: auto;
+    height: auto;
+    padding-top: 0;
+
+    > *:first-child {
+      display: none;
+    }
+  }
 }
 
 ::-webkit-scrollbar {
@@ -27,6 +40,10 @@
   font-size: 18px;
   font-weight: 400;
   color: #fff;
+
+  @media screen and (max-width: 768px) {
+    font-size: 14px;
+  }
 }
 
 .divider {
