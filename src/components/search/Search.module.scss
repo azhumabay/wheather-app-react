@@ -14,12 +14,12 @@
   border: none;
   outline: none;
   background-color: inherit;
-  color: #fff;
+  color: rgba($color: #fff, $alpha: 0.7);
 
   font-size: 20px;
 
   &::placeholder {
-    color: #fff;
+    color: rgba($color: #fff, $alpha: 0.7);
     font-size: 20px;
   }
 }

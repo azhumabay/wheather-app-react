@@ -1,5 +1,7 @@
 # OpenWeatherApp
 
+<h2></h2>
+
 <ul>
   <li>Vite</li>
   <li>JavaScript</li>

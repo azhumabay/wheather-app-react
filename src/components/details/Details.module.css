@@ -1,8 +1,8 @@
 .container {
   width: 526px;
 
-  background: rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(5px);
+  background: inherit;
+  backdrop-filter: blur(19px);
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   overflow: hidden;
@@ -13,7 +13,13 @@
 .title {
   margin-top: 41px;
   margin-bottom: 52px;
-  
+
   font-size: 18px;
+  font-weight: 400;
   color: #fff;
+}
+
+.divider {
+  margin-top: 85px;
+  margin-bottom: 41px;
 }
