@@ -1,0 +1,44 @@
+.wrapper {
+  font-size: 18px;
+  color: #fff;
+  font-weight: 400;
+}
+
+.title {
+  font-weight: 400;
+  margin-bottom: 56px;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 41px;
+
+  & > p {
+    font-size: 24px;
+    color: rgba($color: #fff, $alpha: 0.7);
+  }
+
+  & > img {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+.info {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  & > span {
+    color: rgba($color: #fff, $alpha: 0.7);
+  }
+}
