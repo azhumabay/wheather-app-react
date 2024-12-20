@@ -8,3 +8,5 @@ const HTTP_CLIENT = axios.create({
 });
 
 export default HTTP_CLIENT;
+
+// HTTP_CLIENT.interceptors.response.use((response) => response.data);

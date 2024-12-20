@@ -13,6 +13,9 @@ export default defineConfig({
       "@router": path.resolve(__dirname, "./src/router"),
       "@assets": path.resolve(__dirname, "./src/assets"),
       "@icons": path.resolve(__dirname, "./src/assets/icons"),
+      "@slices": path.resolve(__dirname, "./src/slices"),
+      "@store": path.resolve(__dirname, "./src/store"),
+      "@api": path.resolve(__dirname, "./src/api"),
     },
   },
 });

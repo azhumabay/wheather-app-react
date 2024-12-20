@@ -26,7 +26,10 @@
       "@pages": ["src/pages"],
       "@router": ["src/router"],
       "@assets": ["src/assets"],
-      "@icons/*": ["src/assets/icons/*"]
+      "@icons/*": ["src/assets/icons/*"],
+      "@slices/*": ["src/slices/*"],
+      "@store": ["src/store"],
+      "@api": ["src/api"]
     }
   },
   "include": ["src"]
