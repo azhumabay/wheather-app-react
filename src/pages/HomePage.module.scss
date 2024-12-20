@@ -5,7 +5,7 @@
   display: flex;
   justify-content: space-between;
 
-  > *:first-child {
+  & > *:first-child {
     display: none;
   }
 
@@ -17,7 +17,7 @@
   @media screen and (max-width: 1200px) {
     flex-direction: column;
 
-    > *:first-child {
+    & > *:first-child {
       display: flex;
       position: absolute;
       right: 40px;

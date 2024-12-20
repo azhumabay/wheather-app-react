@@ -1,10 +1,11 @@
 .wrapper {
   color: #fff;
-  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
 
   display: flex;
+  height: 500px;
   align-items: center;
-  margin-top: 40vh;
+  margin-top: 500px;
   gap: 30px;
 
   h1 {
@@ -19,6 +20,7 @@
 
   @media screen and (max-width: 1200px) {
     margin-top: 30vw;
+    height: auto;
 
     h1 {
       font-size: 120px;
