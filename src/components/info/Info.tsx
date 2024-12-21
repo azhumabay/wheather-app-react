@@ -58,6 +58,7 @@ const Info: FC = () => {
     Snow: snow,
     Clouds: cloudy,
     Drizzle: drizzle,
+    Mist: mist,
     Atmosphere: mist,
     Rain: rain,
     Thunderstorm: thunderstorm,

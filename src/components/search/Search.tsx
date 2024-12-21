@@ -33,6 +33,14 @@ const Search: FC = () => {
     } catch (error) {
       console.error("Error fetching data:", error);
     }
+
+    setInput("");
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter" && input.trim()) {
+      fetchCity();
+    }
   };
 
   return (
@@ -43,6 +51,7 @@ const Search: FC = () => {
           className={styles.input}
           value={input}
           onChange={setInputHandler}
+          onKeyDown={handleKeyDown}
         />
         <img src={magnifier} className={styles.magnifier} onClick={fetchCity} />
       </div>

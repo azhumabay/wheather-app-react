@@ -5,7 +5,7 @@ import cloudy from "@icons/cloudy.svg";
 import mist from "@icons/mist.svg";
 import shower_rain from "@icons/shower_rain.svg";
 import clear_sky from "@icons/clear_sky.svg";
-import rain from "@icons/rain.svg"
+import rain from "@icons/rain.svg";
 import thunderstorm from "@icons/thunderstorm.svg";
 import { useSelector } from "react-redux";
 import { RootState } from "@store";
@@ -19,6 +19,7 @@ const Forecast: FC = () => {
     Snow: snow,
     Clouds: cloudy,
     Drizzle: shower_rain,
+    Mist: mist,
     Atmosphere: mist,
     Rain: rain,
     Thunderstorm: thunderstorm,

@@ -100,17 +100,15 @@ const weatherSlice = createSlice({
       };
     });
     builder.addCase(fetchForecast.fulfilled, (state, { payload }) => {
-      state.forecast = [];
-      payload.list.map((item: any) => {
-        console.log(item.weather[0].description);
-      });
-      state.forecast = payload.list.map((item: any) => ({
-        id: item.dt,
-        time: item.dt_txt.split(" ")[1].slice(0, 5),
-        temp: item.main.temp,
-        main: item.weather[0].main,
-        description: item.weather[0].description,
-      }));
+      state.forecast = payload.list
+        .filter((_: any, index: number) => index < 5)
+        .map((item: any) => ({
+          id: item.dt,
+          time: item.dt_txt.split(" ")[1].slice(0, 5),
+          temp: item.main.temp,
+          main: item.weather[0].main,
+          description: item.weather[0].description,
+        }));
     });
   },
 });
