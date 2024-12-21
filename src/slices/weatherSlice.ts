@@ -1,4 +1,4 @@
-import { currentWeather, geocoding } from "@api";
+import { weatherService, geocoding } from "@api";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 export const fetchCoordinates = createAsyncThunk<Coordinate[], string>(
@@ -12,7 +12,15 @@ export const fetchCoordinates = createAsyncThunk<Coordinate[], string>(
 export const fetchWeather = createAsyncThunk(
   "weather/fetchWeather",
   async (coordinates: { lat: number; lon: number }) => {
-    const response = await currentWeather.fetchCurrentWeather(coordinates);
+    const response = await weatherService.getCurrentWeather(coordinates);
+    return response.data;
+  }
+);
+
+export const fetchForecast = createAsyncThunk(
+  "weather/fetchForecast",
+  async (coordinates: { lat: number; lon: number }) => {
+    const response = await weatherService.getWeatherForecast(coordinates);
     return response.data;
   }
 );
@@ -31,12 +39,25 @@ type Data = {
   humidity: number | null;
   temp_max: number | null;
   temp_min: number | null;
+  windSpeed: number | null;
+  main: string | null;
+  dt: number | null;
+  clouds: number | null;
+};
+
+export type Forecast = {
+  id: number;
+  time: string;
+  temp: number;
+  main: string;
+  description: string;
 };
 
 type WeatherState = {
   cityName: string;
   coordinates: { lat: number | null; lon: number | null };
   data: Data;
+  forecast: Forecast[];
 };
 
 const initialState: WeatherState = {
@@ -48,7 +69,12 @@ const initialState: WeatherState = {
     humidity: null,
     temp_max: null,
     temp_min: null,
+    windSpeed: null,
+    main: null,
+    dt: null,
+    clouds: null,
   },
+  forecast: [],
 };
 
 const weatherSlice = createSlice({
@@ -61,14 +87,30 @@ const weatherSlice = createSlice({
       state.coordinates.lon = payload[0].lon;
     });
     builder.addCase(fetchWeather.fulfilled, (state, { payload }) => {
-      console.log(payload.name);
       state.data = {
         name: payload.name,
-        temp: payload.main.temp,
+        temp: Math.round(payload.main.temp),
         humidity: payload.main.humidity,
         temp_max: payload.main.temp_max,
         temp_min: payload.main.temp_min,
+        windSpeed: payload.wind.speed,
+        main: payload.weather[0].main,
+        dt: payload.dt,
+        clouds: payload.clouds.all,
       };
+    });
+    builder.addCase(fetchForecast.fulfilled, (state, { payload }) => {
+      state.forecast = [];
+      payload.list.map((item: any) => {
+        console.log(item.weather[0].description);
+      });
+      state.forecast = payload.list.map((item: any) => ({
+        id: item.dt,
+        time: item.dt_txt.split(" ")[1].slice(0, 5),
+        temp: item.main.temp,
+        main: item.weather[0].main,
+        description: item.weather[0].description,
+      }));
     });
   },
 });

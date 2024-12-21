@@ -1,12 +1,18 @@
 import { FC } from "react";
 import stats from "./Stats.module.scss";
-import temp_max from "@icons/temp_max.svg";
-import temp_min from "@icons/temp_min.svg";
-import humadity from "@icons/humadity.svg";
+import temp_max_icon from "@icons/temp_max.svg";
+import temp_min_icon from "@icons/temp_min.svg";
+import humidityIcon from "@icons/humadity.svg";
 import cloudy from "@icons/cloudy.svg";
 import wind from "@icons/wind.svg";
+import { useSelector } from "react-redux";
+import { RootState } from "@store";
 
 const Stats: FC = () => {
+  const { temp_max, temp_min, humidity, windSpeed, clouds } = useSelector(
+    (state: RootState) => state.weather.data
+  );
+
   return (
     <div className={stats.wrapper}>
       <h2 className={stats.info}>thunderstorm with light drizzle</h2>
@@ -14,35 +20,35 @@ const Stats: FC = () => {
         <li>
           <p>Temp max</p>
           <div>
-            <p>19&deg;</p>
-            <img src={temp_max} />
+            <p>{temp_max && `${temp_max}°`}</p>
+            <img src={temp_max_icon} />
           </div>
         </li>
         <li>
           <p>Temp min</p>
           <div>
-            <p>15&deg;</p>
-            <img src={temp_min} />
+            <p>{temp_min && `${temp_min}°`}</p>
+            <img src={temp_min_icon} />
           </div>
         </li>
         <li>
-          <p>Humadity</p>
+          <p>Humidity</p>
           <div>
-            <p>58%</p>
-            <img src={humadity} />
+            <p>{humidity && `${humidity}%`}</p>
+            <img src={humidityIcon} />
           </div>
         </li>
         <li>
           <p>Cloudy</p>
           <div>
-            <p>86%</p>
+            <p>{clouds}%</p>
             <img src={cloudy} />
           </div>
         </li>
         <li>
           <p>Wind</p>
           <div>
-            <p>5km/h</p>
+            <p>{windSpeed && `${windSpeed} m/s`}</p>
             <img src={wind} />
           </div>
         </li>

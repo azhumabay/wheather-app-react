@@ -2,7 +2,11 @@ import { FC, useState } from "react";
 import styles from "./Search.module.scss";
 import magnifier from "@assets/icons/magnifier.svg";
 import { useAppDispatch } from "@store";
-import { fetchCoordinates, fetchWeather } from "@slices/weatherSlice";
+import {
+  fetchCoordinates,
+  fetchForecast,
+  fetchWeather,
+} from "@slices/weatherSlice";
 
 const Search: FC = () => {
   const [input, setInput] = useState("");
@@ -19,10 +23,10 @@ const Search: FC = () => {
     try {
       const result = await dispatch(fetchCoordinates(input)).unwrap();
       const { lat, lon } = result[0];
-      console.log(lat, lon);
 
       if (lat !== null && lon !== null) {
         dispatch(fetchWeather({ lat, lon }));
+        dispatch(fetchForecast({ lat, lon }));
       } else {
         console.error("Coordinates are null.");
       }

@@ -2,70 +2,46 @@ import { FC } from "react";
 import forecast from "./Forecast.module.scss";
 import snow from "@icons/snow.svg";
 import cloudy from "@icons/cloudy.svg";
+import mist from "@icons/mist.svg";
 import shower_rain from "@icons/shower_rain.svg";
-import few_clouds from "@icons/few_clouds.svg";
+import clear_sky from "@icons/clear_sky.svg";
+import rain from "@icons/rain.svg"
 import thunderstorm from "@icons/thunderstorm.svg";
+import { useSelector } from "react-redux";
+import { RootState } from "@store";
 
 const Forecast: FC = () => {
+  const forecastList = useSelector(
+    (state: RootState) => state.weather.forecast
+  );
+
+  const weatherIcons: Record<string, string> = {
+    Snow: snow,
+    Clouds: cloudy,
+    Drizzle: shower_rain,
+    Atmosphere: mist,
+    Rain: rain,
+    Thunderstorm: thunderstorm,
+    Clear: clear_sky,
+  };
+
   return (
     <>
       <div className={forecast.wrapper}>
         <h2 className={forecast.title}>Today's Weather Forecast...</h2>
 
         <ul className={forecast.list}>
-          <li className={forecast.item}>
-            <img src={snow} />
-            <div className={forecast.info}>
-              <p>06:00</p>
-              <span>Snow</span>
-            </div>
-            <p>19&deg;</p>
-          </li>
-
-          <li className={forecast.item}>
-            <img src={cloudy} />
-            <div className={forecast.info}>
-              <p>09:00</p>
-              <span>Broken Clouds</span>
-            </div>
-            <p>19&deg;</p>
-          </li>
-
-          <li className={forecast.item}>
-            <img src={few_clouds} />
-            <div className={forecast.info}>
-              <p>12:00</p>
-              <span>Few Clouds</span>
-            </div>
-            <p>19&deg;</p>
-          </li>
-
-          <li className={forecast.item}>
-            <img src={thunderstorm} />
-            <div className={forecast.info}>
-              <p>15:00</p>
-              <span>Thunderstorm</span>
-            </div>
-            <p>19&deg;</p>
-          </li>
-
-          <li className={forecast.item}>
-            <img src={snow} />
-            <div className={forecast.info}>
-              <p>18:00</p>
-              <span>Snow</span>
-            </div>
-            <p>19&deg;</p>
-          </li>
-
-          <li className={forecast.item}>
-            <img src={shower_rain} />
-            <div className={forecast.info}>
-              <p>21:00</p>
-              <span>Shower Rain</span>
-            </div>
-            <p>19&deg;</p>
-          </li>
+          {forecastList &&
+            forecastList.map(({ id, time, temp, main, description }) => (
+              <li className={forecast.item} key={id}>
+                <img src={weatherIcons[main]} alt={main} />
+                <div className={forecast.info}>
+                  <p>{time}</p>
+                  <span>{description}</span>
+                </div>
+                <p>{`${Math.round(temp)}°`}</p>
+              </li>
+            ))}
         </ul>
       </div>
     </>
