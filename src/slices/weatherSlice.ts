@@ -43,6 +43,7 @@ type Data = {
   main: string | null;
   dt: number | null;
   clouds: number | null;
+  description: string | null;
 };
 
 export type Forecast = {
@@ -73,6 +74,7 @@ const initialState: WeatherState = {
     main: null,
     dt: null,
     clouds: null,
+    description: null,
   },
   forecast: [],
 };
@@ -97,6 +99,7 @@ const weatherSlice = createSlice({
         main: payload.weather[0].main,
         dt: payload.dt,
         clouds: payload.clouds.all,
+        description: payload.weather[0].description,
       };
     });
     builder.addCase(fetchForecast.fulfilled, (state, { payload }) => {

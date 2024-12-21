@@ -9,13 +9,12 @@ import { useSelector } from "react-redux";
 import { RootState } from "@store";
 
 const Stats: FC = () => {
-  const { temp_max, temp_min, humidity, windSpeed, clouds } = useSelector(
-    (state: RootState) => state.weather.data
-  );
+  const { temp_max, temp_min, humidity, windSpeed, clouds, description } =
+    useSelector((state: RootState) => state.weather.data);
 
   return (
     <div className={stats.wrapper}>
-      <h2 className={stats.info}>thunderstorm with light drizzle</h2>
+      <h2 className={stats.info}>{description}</h2>
       <ul className={stats.ul}>
         <li>
           <p>Temp max</p>
