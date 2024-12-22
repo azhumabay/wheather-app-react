@@ -1,17 +1,17 @@
 # OpenWeatherApp
 
-<h2>OpenWeatherApp — это веб-приложение для отображения информации о погоде, созданное с использованием современного стека технологий и адаптированного дизайна на основе (https://www.figma.com/community/file/1300997022541611628/weather-web)</h4>
+OpenWeatherApp — это веб-приложение для отображения информации о погоде, созданное с использованием современного стека технологий и адаптированного дизайна на основе (https://www.figma.com/community/file/1300997022541611628/weather-web)
 
 ## Приложение разработано с использованием следующих технологий:
 
 <ul>
-  <li>Vite</li>
-  <li>JavaScript</li>
-  <li>React (v.18)</li>
-  <li>React Router (v.7)</li>
-  <li>Axios</li>
-  <li>Redux ToolKit</li>
-  <li>CSS Module</li>
+  <li>**Vite**</li>
+  <li>**JavaScript**</li>
+  <li>**React (v.18)**</li>
+  <li>**React Router (v.7)**</li>
+  <li>**Axios**</li>
+  <li>**Redux ToolKit**</li>
+  <li>**CSS Module**</li>
 </ul>
 
 ## Особенности
