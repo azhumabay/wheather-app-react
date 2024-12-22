@@ -1,4 +1,4 @@
-# OpenWeatherApp
+# OpenWeather
 
 OpenWeatherApp — это веб-приложение для отображения информации о погоде, созданное с использованием современного стека технологий и адаптированного дизайна на основе (https://www.figma.com/community/file/1300997022541611628/weather-web)
 
