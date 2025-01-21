@@ -63,6 +63,7 @@ const Info: FC = () => {
     Rain: rain,
     Thunderstorm: thunderstorm,
     Clear: clear,
+    Smoke: mist
   };
 
   return (
